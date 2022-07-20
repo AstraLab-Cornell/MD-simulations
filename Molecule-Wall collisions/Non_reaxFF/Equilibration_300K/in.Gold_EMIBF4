@@ -1,0 +1,115 @@
+
+
+ units metal
+ #atom_style molecular
+ atom_style        full
+ pair_style        hybrid lj/charmm/coul/charmm 8 10 16 18 eam/alloy # should be 8 10 100 110
+ pair_modify       shift no mix arithmetic
+ bond_style harmonic
+ special_bonds amber
+ angle_style harmonic
+ dihedral_style charmm
+ improper_style cvff
+ boundary f p p
+
+read_data data.system
+
+ # write_coeff syst.coeff
+
+pair_coeff 1 1 lj/charmm/coul/charmm 0.00731 3.25 0.00031433 3.25
+pair_coeff 1 2 lj/charmm/coul/charmm 0.005199259 3.32485 0.000223568137 3.32485
+pair_coeff 1 3 lj/charmm/coul/charmm 0.005199259 3.32485 0.000223568137 3.32485
+pair_coeff 1 4 lj/charmm/coul/charmm 0.005864082 3.32485 0.000252155526 3.32485
+pair_coeff 1 5 lj/charmm/coul/charmm 0.0021713925 2.8803 9.33698775e-05 2.8803
+pair_coeff 1 6 lj/charmm/coul/charmm 0.0021713925 2.83575 9.33698775e-05 2.83575
+pair_coeff 1 7 lj/charmm/coul/charmm 0.0022214832 2.8607 9.55237776e-05 2.8607
+pair_coeff 1 8 lj/charmm/coul/charmm 0.0022214832 2.94975 9.55237776e-05 2.94975
+pair_coeff 1 9 lj/charmm/coul/charmm 0.005464569 3.4157 0.000234976467 3.4157
+pair_coeff 1 10 lj/charmm/coul/charmm 0.004378819 3.18405 0.000188289217 3.18405
+pair_coeff 1 11 lj/charmm/coul/charmm 0.0035012664 3.092 0.0001505544552 3.092
+pair_coeff 2 2 lj/charmm/coul/charmm 0.003698 3.3997 0.000159014 3.3997
+pair_coeff 2 3 lj/charmm/coul/charmm 0.003698 3.3997 0.000159014 3.3997
+pair_coeff 2 4 lj/charmm/coul/charmm 0.0041708667 3.3997 0.0001793472681 3.3997
+pair_coeff 2 5 lj/charmm/coul/charmm 0.0015444138 2.95515 6.64097934e-05 2.95515
+pair_coeff 2 6 lj/charmm/coul/charmm 0.0015444138 2.9106 6.64097934e-05 2.9106
+pair_coeff 2 7 lj/charmm/coul/charmm 0.0015800393 2.93555 6.79416899e-05 2.93555
+pair_coeff 2 8 lj/charmm/coul/charmm 0.0015800393 3.0246 6.79416899e-05 3.0246
+pair_coeff 2 9 lj/charmm/coul/charmm 0.0038866883 3.49055 0.0001671275969 3.49055
+pair_coeff 2 10 lj/charmm/coul/charmm 0.0031144599 3.2589 0.0001339217757 3.2589
+pair_coeff 2 11 lj/charmm/coul/charmm 0.0024902891 3.16685 0.0001070824313 3.16685
+pair_coeff 3 3 lj/charmm/coul/charmm 0.003698 3.3997 0.000159014 3.3997
+pair_coeff 3 4 lj/charmm/coul/charmm 0.0041708667 3.3997 0.0001793472681 3.3997
+pair_coeff 3 5 lj/charmm/coul/charmm 0.0015444138 2.95515 6.64097934e-05 2.95515
+pair_coeff 3 6 lj/charmm/coul/charmm 0.0015444138 2.9106 6.64097934e-05 2.9106
+pair_coeff 3 7 lj/charmm/coul/charmm 0.0015800393 2.93555 6.79416899e-05 2.93555
+pair_coeff 3 8 lj/charmm/coul/charmm 0.0015800393 3.0246 6.79416899e-05 3.0246
+pair_coeff 3 9 lj/charmm/coul/charmm 0.0038866883 3.49055 0.0001671275969 3.49055
+pair_coeff 3 10 lj/charmm/coul/charmm 0.0031144599 3.2589 0.0001339217757 3.2589
+pair_coeff 3 11 lj/charmm/coul/charmm 0.0024902891 3.16685 0.0001070824313 3.16685
+pair_coeff 4 4 lj/charmm/coul/charmm 0.0047042 3.3997 0.0002022806 3.3997
+pair_coeff 4 5 lj/charmm/coul/charmm 0.0017418999 2.95515 7.49016957e-05 2.95515
+pair_coeff 4 6 lj/charmm/coul/charmm 0.0017418999 2.9106 7.49016957e-05 2.9106
+pair_coeff 4 7 lj/charmm/coul/charmm 0.0017820791 2.93555 7.66294013e-05 2.93555
+pair_coeff 4 8 lj/charmm/coul/charmm 0.0017820791 3.0246 7.66294013e-05 3.0246
+pair_coeff 4 9 lj/charmm/coul/charmm 0.004383678 3.49055 0.000188498154 3.49055
+pair_coeff 4 10 lj/charmm/coul/charmm 0.0035127087 3.2589 0.0001510464741 3.2589
+pair_coeff 4 11 lj/charmm/coul/charmm 0.0028087256 3.16685 0.0001207752008 3.16685
+pair_coeff 5 5 lj/charmm/coul/charmm 0.000645 2.5106 2.7735e-05 2.5106
+pair_coeff 5 6 lj/charmm/coul/charmm 0.000645 2.46605 2.7735e-05 2.46605
+pair_coeff 5 7 lj/charmm/coul/charmm 0.000659878 2.491 2.8374754e-05 2.491
+pair_coeff 5 8 lj/charmm/coul/charmm 0.000659878 2.58005 2.8374754e-05 2.58005
+pair_coeff 5 9 lj/charmm/coul/charmm 0.0016232156 3.046 6.97982708e-05 3.046
+pair_coeff 5 10 lj/charmm/coul/charmm 0.001300707 2.81435 5.5930401e-05 2.81435
+pair_coeff 5 11 lj/charmm/coul/charmm 0.0010400324 2.7223 4.47213932e-05 2.7223
+pair_coeff 6 6 lj/charmm/coul/charmm 0.000645 2.4215 2.7735e-05 2.4215
+pair_coeff 6 7 lj/charmm/coul/charmm 0.000659878 2.44645 2.8374754e-05 2.44645
+pair_coeff 6 8 lj/charmm/coul/charmm 0.000659878 2.5355 2.8374754e-05 2.5355
+pair_coeff 6 9 lj/charmm/coul/charmm 0.0016232156 3.00145 6.97982708e-05 3.00145
+pair_coeff 6 10 lj/charmm/coul/charmm 0.001300707 2.7698 5.5930401e-05 2.7698
+pair_coeff 6 11 lj/charmm/coul/charmm 0.0010400324 2.67775 4.47213932e-05 2.67775
+pair_coeff 7 7 lj/charmm/coul/charmm 0.0006751 2.4714 2.90293e-05 2.4714
+pair_coeff 7 8 lj/charmm/coul/charmm 0.0006751 2.56045 2.90293e-05 2.56045
+pair_coeff 7 9 lj/charmm/coul/charmm 0.0016606557 3.0264 7.14081951e-05 3.0264
+pair_coeff 7 10 lj/charmm/coul/charmm 0.0013307081 2.79475 5.72204483e-05 2.79475
+pair_coeff 7 11 lj/charmm/coul/charmm 0.0010640221 2.7027 4.57529503e-05 2.7027
+pair_coeff 8 8 lj/charmm/coul/charmm 0.0006751 2.6495 2.90293e-05 2.6495
+pair_coeff 8 9 lj/charmm/coul/charmm 0.0016606557 3.11545 7.14081951e-05 3.11545
+pair_coeff 8 10 lj/charmm/coul/charmm 0.0013307081 2.8838 5.72204483e-05 2.8838
+pair_coeff 8 11 lj/charmm/coul/charmm 0.0010640221 2.79175 4.57529503e-05 2.79175
+pair_coeff 9 9 lj/charmm/coul/charmm 0.004085 3.5814 0.000175655 3.5814
+pair_coeff 9 10 lj/charmm/coul/charmm 0.0032733707 3.34975 0.0001407549401 3.34975
+pair_coeff 9 11 lj/charmm/coul/charmm 0.0026173541 3.2577 0.0001125462263 3.2577
+pair_coeff 10 10 lj/charmm/coul/charmm 0.002623 3.1181 0.000112789 3.1181
+pair_coeff 10 11 lj/charmm/coul/charmm 0.002097325 3.02605 9.0184975e-05 3.02605
+pair_coeff * * eam/alloy Au_GLJ10_3.eam.alloy NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL Au
+
+
+group liquid type 1:10
+group plate  type 11
+
+ velocity liquid create 300 347 mom yes rot yes dist gaussian
+ velocity plate create 300 376847 mom yes rot yes dist gaussian
+
+
+fix xwalls all wall/reflect xlo EDGE xhi EDGE
+
+ fix TFIX1 liquid nvt temp 300 300 $(100.0*dt)
+ fix TFIX2 plate nvt temp 300 300 $(100.0*dt)
+
+#region myregion block 19 35 INF INF INF INF
+#fix wall plate wall/region myregion lj93 1.0 1.0 2.5
+
+ compute Tliq liquid temp
+ compute Tplate plate temp
+
+ thermo_style custom step c_Tliq c_Tplate
+ thermo 100
+ timestep 0.000005
+
+ dump myDump all atom 100 dump.system
+
+ run 1000000
+
+ undump myDump
+
+  write_data eq_SYST.dat

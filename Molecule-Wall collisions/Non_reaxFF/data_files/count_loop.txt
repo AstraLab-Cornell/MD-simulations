@@ -1,0 +1,28 @@
+for KEloop in {10..90..10};
+do export KE=$KEloop;
+x=0;
+for nloop in {0..180..15};
+    do export N=$nloop;
+for mloop in {0..345..15};
+    do export M=$mloop;
+ i=$(grep -hc "Fix halt fragmentation condition met" "log_${nloop}_${mloop}_KE${KE}.lammps");
+   x=$((x+i))
+done
+done
+echo "The total number of fragmentation is" $x "out of 312"
+done
+
+
+
+
+for KEloop in {10..90..10};
+do export KE=$KEloop;
+
+for nloop in {0..180..15};
+    do export N=$nloop;
+for mloop in {0..345..15};
+    do export M=$mloop;
+	grep -Eo "Fix halt fragmentation condition met"  "log_${nloop}_${mloop}_KE${KE}.lammps" -c;
+done
+done
+done

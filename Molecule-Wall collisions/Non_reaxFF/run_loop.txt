@@ -1,0 +1,16 @@
+for KEloop in {10,20,30,40,50,60,70,80,90};
+    do export KE=$KEloop;
+for nloop in {0..180..15};
+    do export N=$nloop;
+for mloop in {0..345..15};
+    do export M=$mloop;
+printf "KE= %s ; Phi_z = %s ; Phi_y = %s\n" "$KEloop" "$nloop" "$mloop"
+mpirun -n 8 lmp_mpi -in in.sys_elec ;
+done
+done
+done
+
+
+
+
+
