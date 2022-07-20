@@ -1,0 +1,47 @@
+
+
+
+variable ke file kevalues.txt
+label loopke
+
+    variable n file phizvalues.txt
+    label loopn
+
+            variable m file phiyvalues.txt
+            label loopm
+
+                clear
+                units real
+                atom_style        full
+                boundary m m m
+                print "----------------------------------------------------------"
+                print "    LAMMPS is reading: KE= ${ke} ; Phi_z= $n ; Phi_y= $m . "
+                print "---------------------------------------------------------- "
+                read_data data_files/eq_SYST_$n_$m_KE${ke}.dat
+                pair_style	   reax/c NULL
+                pair_coeff	* * ffield_IL.txt N C H B F
+                fix  1 all qeq/reax 1 0.0 10.0 1e-4 reax/c
+                fix EFIX all nve
+                region myregion block INF 19 INF INF INF INF
+                fix wall all wall/region myregion lj126 1.0 1.0 2.5
+                compute Tliq all temp/com
+                thermo_style custom step c_Tliq etotal
+                thermo 100
+                #thermo_modify lost ignore
+                #thermo_modify lost/bond ignore
+                timestep 0.5
+                dump myDump all custom 100 dump_$n_$m_KE${ke}.prod id type x y z
+                dump_modify myDump units yes
+                log log_$n_$m_KE${ke}.lammps
+                run 11000
+                unfix EFIX
+                undump myDump
+
+            next m
+            jump SELF loopm
+
+    next n
+    jump SELF loopn
+
+next ke
+jump SELF loopke
