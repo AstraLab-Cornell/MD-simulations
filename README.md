@@ -1,4 +1,4 @@
-# Molecular-Dynamics-EMIBF4-Collisions
+# Molecular Dynamics simulations of molecule-wall and molecule-molecule collisions:
 
 1- For EMIBF4-Wall collisions go to the folder --> "Molecule-Wall collisions" and read the corresponding README file.
 
