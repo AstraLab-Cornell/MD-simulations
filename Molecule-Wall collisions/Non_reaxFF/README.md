@@ -1,1 +1,14 @@
-These files contain simulations at 300K. To change the temperature, you need to go to "Equilibration_300K/in.Gold_EMIBF4/" and edit the line 96 (to change the temperature of the molecule) or the line 97 (to change the temperature of the plate).
+## Procedure:
+To produce the results, follow these steps:
+
+1- Go to "Equilibration_300K" and run "in.Gold_EMIBF4" to equilibrate the system at 300K.
+   (Note: If you want to change the temperature of the molecule go to line 96. If you want to change the temperature of the plate go to line 97).
+   
+   This step will produce the file of the equilibrated system named "eq_SYST.dat". 
+   
+2- Copy "eq_SYST.dat" and paste in the folder "data_files". Then, run the Matlab code "call.m".  
+
+   This will produce many data files that correspond to different landing configurations and different impact energies.
+   
+
+
