@@ -5,7 +5,7 @@ for nloop in {0..180..15};
 for mloop in {0..345..15};
     do export M=$mloop;
 printf "KE= %s ; Phi_z = %s ; Phi_y = %s\n" "$KEloop" "$nloop" "$mloop"
-mpirun -n 8 lmp_mpi -in in.sys_elec ;
+mpirun -n 8 lmp_mpi -in in.sys ;
 done
 done
 done
