@@ -1,1 +1,1 @@
-Readme
+These files contain simulations at 300K. To change the temperature, you need to go to "Equilibration_300K/in.Gold_EMIBF4/" and edit the line 96 (to change the temperature of the molecule) or the line 97 (to change the temperature of the plate).
