@@ -1,0 +1,60 @@
+
+variable a file InternalState.txt
+label loopita
+
+clear
+ units real
+ atom_style        full
+ boundary f p p
+ read_data EMIBF4.dat
+
+ pair_style	   reax/c NULL
+ pair_coeff	* * ffield_IL.txt N C H B F
+
+velocity all create 650 $a mom yes rot yes dist gaussian
+
+
+fix  1 all qeq/reax 1 0.0 8.0 1e-6 reax/c
+
+
+#fix EFIX all nve
+fix TFIX all nvt temp 300 300 $(100.0*dt)
+#egion myregion block INF 19 INF INF INF INF
+#fix wall all wall/region myregion lj93 1.0 1.0 2.5
+
+
+ #compute Tliq all temp/com
+
+
+ #compute cc1 all chunk/atom molecule
+ #compute myChunk all vcm/chunk cc1
+
+
+
+ thermo_style custom step temp etotal
+ thermo 100
+ #thermo_modify lost ignore
+ #thermo_modify lost/bond ignore
+ timestep 0.1
+
+dump myDump all custom 100 InternalState\dump_$a.prod id type x y z
+#dump VDump liquid custom 100 dump.velocity01 id vx vy vz
+
+
+
+
+#run 500000
+
+
+#fix kick all efield 0.001 0.0 0.0
+run 10000
+unfix TFIX
+#unfix EFIX
+#unfix kick
+undump myDump
+#undump VDump
+write_data InternalState\eq_SYST_$a.dat
+
+
+next a
+jump SELF loopita
