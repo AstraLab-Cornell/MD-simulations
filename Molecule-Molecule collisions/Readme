@@ -1,1 +1,23 @@
-hello is this good?
+Important downloads are MATLAB, ATOM, LAMMPS, OVITO(to display any dump file simulation), mpiexec
+
+LAMMPS doesn't have a terminal to write things in so you need to use ATOM and download the LAMMPS extension to write your code in.
+
+for all datafiles generated they are put into a folder "D:\EMIBF4_equilibration\"
+
+LAMMPS(using Atom): 
+in.sys_elec2 equillibrates the molecules at a given temperature( here being 300 K). It loops between variables for the seed number of the internal state given in internalstate.txt (values must be 5 digit). Values for initial particles placements are given in EMIBF4.dat. In EMIBF4.dat, the first column of the atoms segment means atom number, the second is the molecule you want the particle to start in, the third is what atom it is based on the numbers on masses, the fourth column is the particle cargethe next three are the x, y, and z directions. Make sure the first # atoms is equal to the number of atoms you set and the second # is equal to te amount of different atoms you have. the datafiles generated eq_SYST_#.dat. It puts the datafiles into a folder called InternalState.
+
+MATLAB: 
+Real_datafiles_generator uses the datafile created from in.sys_elec2 to generate files of varying KE(translating to the velocity) of the monomer, impact parameter, thetay and thetaz of the molecule. The code varies the theta relative to the center of mass of the molecule. The datafiles generated are written eq_SYST_#_#_KE#_Imp#_IntState#.dat. It puts the datafiles into a folder called data_files.
+
+LAMMPS(using Atom):
+in.run_all reads the files generated from before by reading from 5 text scripts phiyvalues.txt, phizvalues.txt, kevalues.txt, ImpParvalues.txt, and InternalState.txt. Running it creates a dump file adn log file.
+
+MATLAB:
+produce_mass_spectrum reads the dump files created places the dump file into the identify_species code to identify which atoms are close enough to be considered a molecule and then produce_mass_spectrum creates a plot of the mass spectrum with right now internal state being the variance on the graph. If you want to change what the variance is swap wherever it says int to ImpPar or KE.
+
+All LAMMPS files run using command prompt on Windows, code in order of what I put in is:
+
+D: %drive I'm using
+cd EMIBF4_equilibration %folder in drive I am using, if folder within folder you can repeat this step
+mpiexec in 6 lmp_mpi -in (code used) %6 is the number of cores I used for the process, more cores=faster run time, start all of your LAMMPS code with "in." because not 100% sure it wll work without it.
