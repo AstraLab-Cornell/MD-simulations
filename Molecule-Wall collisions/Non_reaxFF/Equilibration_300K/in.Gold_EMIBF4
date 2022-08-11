@@ -87,7 +87,7 @@ pair_coeff * * eam/alloy Au_GLJ10_3.eam.alloy NULL NULL NULL NULL NULL NULL NULL
 group liquid type 1:10
 group plate  type 11
 
- velocity liquid create 300 347 mom yes rot yes dist gaussian
+ velocity liquid create 300 31247 mom yes rot yes dist gaussian
  velocity plate create 300 376847 mom yes rot yes dist gaussian
 
 
