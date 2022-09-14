@@ -83,10 +83,15 @@ function [pos_f] = rotate_z_y(pos_i,phi_z,phi_y)
 %pos_f: final position of the molecule
 
 x=pos_i(:,5);y=pos_i(:,6);z=pos_i(:,7);
+xc=mean(x);
+yc=mean(y);
+zc=mean(z);
 
-X= cosd(phi_y)*cosd(phi_z)*x -  sind(phi_z)*y - cosd(phi_z)*sind(phi_y)*z;
-Y= cosd(phi_y)*sind(phi_z)*x + cosd(phi_z)*y -  sind(phi_y)*sind(phi_z)*z;
-Z= sind(phi_y)*x      +    cosd(phi_y)*z;
+X= cosd(phi_y)*cosd(phi_z)*(x-xc) -  sind(phi_z)*(y-yc) - cosd(phi_z)*sind(phi_y)*(z-zc);
+Y= cosd(phi_y)*sind(phi_z)*(x-xc) + cosd(phi_z)*(y-yc) -  sind(phi_y)*sind(phi_z)*(z-zc);
+Z= sind(phi_y)*(x-xc)      +    cosd(phi_y)*(z-zc);
+
+
 
 pos_f=pos_i; pos_f(:,5)=X;pos_f(:,6)=Y;pos_f(:,7)=Z;
 end
