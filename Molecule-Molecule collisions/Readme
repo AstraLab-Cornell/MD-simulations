@@ -1,10 +1,9 @@
-Important downloads are MATLAB, ATOM, LAMMPS, OVITO(to display any dump file simulation), mpiexec
+Important downloads are MATLAB, LAMMPS, OVITO(to display any dump file simulation), mpiexec, and a text editor (e.g: Atom, Visual Studio Code).
 
-LAMMPS doesn't have a terminal to write things in so you need to use ATOM and download the LAMMPS extension to write your code in.
 
 for all datafiles generated they are put into a folder "D:\EMIBF4_equilibration\"
 
-LAMMPS(using Atom): 
+LAMMPS: 
 in.sys_elec2 equillibrates the molecules at a given temperature( here being 300 K). It loops between variables for the seed number of the internal state given in internalstate.txt (values must be 5 digit). Values for initial particles placements are given in EMIBF4.dat. In EMIBF4.dat, the first column of the atoms segment means atom number, the second is the molecule you want the particle to start in, the third is what atom it is based on the numbers on masses, the fourth column is the particle cargethe next three are the x, y, and z directions. Make sure the first # atoms is equal to the number of atoms you set and the second # is equal to te amount of different atoms you have. the datafiles generated eq_SYST_#.dat. It puts the datafiles into a folder called InternalState.
 
 MATLAB: 
