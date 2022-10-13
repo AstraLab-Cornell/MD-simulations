@@ -24,7 +24,7 @@ for i=1:n
           mass(i)= 14.0070; % Nitrogen 
           %name(i)= 'N';
         case 2
-          mass(i)= 12.0010; % Carbon
+          mass(i)= 12.011; % Carbon
           %name(i)= 'C';
         case 3
           mass(i)= 1.0080; % Hydrogen
